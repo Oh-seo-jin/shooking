@@ -14,7 +14,7 @@ export default function ProductCard({path, name, info, price, count, setCount}) 
                 <h3 className="font-bold text-base">{name}</h3>
                 <p className="text-sm text-gray-500">{info}</p>
                 <p className="font-bold text-base">{price}</p>
-                <button onClick={handleClick} className={`bg-black text-white text-xs p-1 w-11 rounded-xl ${disabled ? 'bg-gray-300 text-black font-bold': ''}`}>{disabled ? "담김!" : "담기"}</button>
+                <button onClick={handleClick} className={`bg-black text-white text-xs p-1 w-11 rounded-xl ${disabled ? 'bg-gray-300 text-black font-bold cursor-not-allowed': ''}`} disabled={disabled ? "disabled" : ""}>{disabled ? "담김!" : "담기"}</button>
             </div>
         </div>
     )
