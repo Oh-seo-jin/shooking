@@ -9,12 +9,12 @@ function App() {
   return (
     <div className='w-screen h-screen'>
       {/* header */}
-      <div className='bg-black w-screen h-16 flex flex-row justify-end items-center px-6'>
+      <div className='bg-black w-screen h-16 flex flex-row justify-end items-center px-6 lg:px-12'>
         <p className='text-white mr-1'>장바구니</p>
         <p className='bg-white text-black font-bold rounded-full w-6 h-6 text-center'>{count}</p>
       </div>
       {/* main */}
-      <div className='p-6'>
+      <div className='p-6 lg:px-60'>
         <h1 className='font-bold text-2xl mt-4 mb-1'>신발 상품 목록</h1>
         <p className='text-base mb-6'>현재 {n}개의 상품이 있습니다.</p>
         <div className='grid grid-cols-2 gap-4'>
