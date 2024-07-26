@@ -3,7 +3,6 @@ import { Component } from 'react';
 class ProductCard extends Component {
     constructor(props){
         super(props);
-        console.log(this.props);
         this.state = {
             disabled: false
         };
@@ -14,7 +13,6 @@ class ProductCard extends Component {
     handleCart() {
         this.setState({disabled: true});
         this.props.setCount(this.props.count + 1);
-        console.log(this.props.count);
     }
 
     handlePurchase() {
