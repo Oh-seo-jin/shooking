@@ -1,11 +1,11 @@
 import Products from './pages/Products';
-import Payments from './pages/Payments';
+import AddPayment from './pages/AddPayment';
 import './App.css';
 
 function App() {
   return (<>
     <Products/>
-    <Payments/>
+    <AddPayment/>
     </>
   );
 }
