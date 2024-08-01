@@ -1,36 +1,27 @@
 import { Component } from "react";
+import { useForm } from "react-hook-form";
 
-class NameForm extends Component {
-  /* constructor : 변수 선언 */
-  constructor(props) {
-    super(props)
-    this.state = {value: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+export default function NameForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: {errors},
+  } = useForm();
 
   /* 함수 정의 */
-  handleChange(event) {
-    this.setState({value: event.target.value});
+  const onSubmit = (data) => {
+    console.log("입력 정보", data);
+    alert("제출완료");
   }
-
-  handleSubmit(event) {
-    alert('A name was submitted: '+this.state.value);
-    event.preventDefault(); // 이벤트의 기본 동작 막음(새로고침, 링크이동)
-  }
-
-  render() {
+  console.log(errors)
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <label>
           이름:
-          <input type="text" value={this.state.value} onChange={this.handleChange}/>
+          <input type="text" {...register("name", {required: "필수 입력 사항입니다"})}/>
+          {errors.name && <p className="text-red-500">{errors.name.message}</p>}
         </label>
         <input type="submit" value="Submit" />
       </form>
     )
-  }
-}
-
-export default NameForm;
+};

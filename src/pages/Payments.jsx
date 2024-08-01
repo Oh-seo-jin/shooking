@@ -21,6 +21,8 @@ class Payments extends Component {
       {/* header */}
       <div className='bg-white w-screen h-16 flex flex-row justify-between items-center px-20 lg:px-12'>
         <p>보유카드</p>
+        <button className="w-full bg-yellow-300 rounded-full p-2 font-bold text-ms">이 카드로 결제하기</button>
+
         <p>X</p>
       </div>
       {/* main */}

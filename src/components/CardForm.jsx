@@ -1,19 +1,25 @@
-class MyCard extends Component {
+import React from "react";
+
+class MyCard extends React.Component {
   render() {
-    const {cardNumber, cardOwner, cardDate} = this.props;
+    const {cardNumber1, cardNumber2, cardNumber3, cardNumber4, cardOwner, cardDateMonth, cardDateYear} = this.props;
 
     return (
-      <div className="w-[342px]">
-        <div className="w-full h-[215px] bg-black text-lg">
-          <div className="w-16 h-10 bg-yellow-600"/>
-          <p className="text-white ">{cardNumber}</p>
-          <div className="flex flex-row justify-between">
-            <p className="text-white">{cardOwner}</p>
-            <p className="text-white">{cardDate}</p>
-          </div>
+      <div className="w-[256px] mx-auto">
+        <div className="w-full h-[161px] bg-gray-800 text-lg rounded-lg relative">
+          <div className="w-12 h-8 bg-[#CBBA64] absolute top-14 left-6 rounded-md"/>
+            <p className="text-white absolute top-24 left-6">{cardNumber1}</p>
+            <p className="text-white absolute top-24 left-20">{cardNumber2}</p>
+            <p className="text-white absolute top-24 right-20">{cardNumber3 ? "••••" : ""}</p>
+            <p className="text-white absolute top-24 right-6">{cardNumber4 ? "••••" : ""}</p>
+            <div className="w-full absolute top-[120px] flex flex-row justify-between">
+              <p className="text-white relative left-6">{cardOwner ? cardOwner : "NAME"}</p>
+              <p className="text-white relative right-6">{cardDateMonth ? cardDateMonth : 'MM' } / {cardDateYear ? cardDateYear : "YY"}</p>
+            </div>
         </div>
-        <button className="w-full bg-yellow-300 rounded-full p-2 font-bold text-ms">이 카드로 결제하기</button>
       </div>
     )
   }
 }
+
+export default MyCard;
