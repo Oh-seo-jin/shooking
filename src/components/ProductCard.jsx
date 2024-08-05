@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class ProductCard extends Component {
     constructor(props){
@@ -7,22 +8,11 @@ class ProductCard extends Component {
             disabled: false
         };
         this.handleCart = this.handleCart.bind(this);
-        this.handlePurchase = this.handlePurchase.bind(this);
     }
 
     handleCart() {
         this.setState({disabled: true});
         this.props.setCount(this.props.count + 1);
-    }
-
-    handlePurchase() {
-        const confirmed = window.confirm("결제 페이지로 이동하시겠습니까?");
-        if (confirmed) {
-            // navigator
-            console.log("User Clicked Yes");
-        } else {
-            console.log("User Clicked No");
-        }
     }
     
     render() {
@@ -38,7 +28,7 @@ class ProductCard extends Component {
                     <p className="font-bold text-base">{price}</p>
                     <div className='flex flex-row gap-2'>
                     <button onClick={this.handleCart} className={`bg-black text-white text-xs p-1 w-11 rounded-xl ${disabled ? 'bg-gray-300 text-black font-bold cursor-not-allowed': ''}`} disabled={disabled ? "disabled" : ""}>{disabled ? "담김!" : "담기"}</button>
-                    <button onClick={this.handlePurchase} className={`bg-yellow-400 text-black text-xs p-1 w-11 rounded-xl`}>구매</button>
+                    <Link className={`bg-yellow-400 text-black text-xs text-center p-1 w-11 rounded-xl`}>구매</Link>
                     </div>
                 </div>
             </div>

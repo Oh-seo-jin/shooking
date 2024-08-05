@@ -1,13 +1,12 @@
-import Products from './pages/Products';
-import AddPayment from './pages/AddPayment';
-import Payments from './pages/Payments'
-import NameForm from './components/ExampleFrom';
-import './App.css';
+import "./App.css";
+import Router from "./Router";
 
 function App() {
-  return (
-    <AddPayment/>
-  );
+  return(
+    <>
+      <Router/>
+    </>
+  )
 }
 
 export default App;

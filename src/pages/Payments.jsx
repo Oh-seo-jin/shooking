@@ -21,9 +21,11 @@ function Payments() {
   return (
     <>
     {/* header */}
-    <div className='bg-white w-screen h-16 flex flex-row justify-between items-center px-20 lg:px-12'>
+    <div className='bg-white w-screen h-16 flex flex-row justify-between items-center px-20 lg:px-20'>
       <p>보유카드</p>
-      <p>X</p>
+      <button className="justify-self-end">
+        <img src={`${process.env.PUBLIC_URL}/svg/cancel.svg`} />
+      </button>
     </div>
     {/* main */}
     <div className="w-80 mx-auto mb-16 flex flex-col items-center gap-12">
