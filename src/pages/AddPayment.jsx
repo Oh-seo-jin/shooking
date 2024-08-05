@@ -43,8 +43,13 @@ export default function AddPayment() {
     }
   }
 
-  const onSubmit = (data) => {
-    alert(data);
+  const onValid = (data) => {
+    console.log(data);
+    alert("성공!");
+  }
+  const onError = (errors) => {
+    console.log(errors);
+    alert("실패!");
   }
 
   return (
@@ -53,12 +58,12 @@ export default function AddPayment() {
     <div className='bg-white w-full h-16 flex flex-row items-center justify-between px-6 md:px-12'>
       <div className="flex flex-row gap-16 ">
         <button>
-          <img src="/svg/prevButton.svg" />
+          <img src={`${process.env.PUBLIC_URL}/svg/prevButton.svg`}/>
         </button>
         <p>카드 추가</p>
       </div>
       <button className="justify-self-end">
-        <img src={"process.env.PUBLIC_URL/svg/cancel.svg"} />
+        <img src={`${process.env.PUBLIC_URL}/svg/cancel.svg`} />
       </button>
     </div>
     {/* card image */}
@@ -74,7 +79,7 @@ export default function AddPayment() {
       />
     </div>
     {/* form */}
-      <form onSubmit={handleSubmit(onSubmit)} className="w-full sm:w-[500px] mx-auto flex flex-col p-6 gap-4">
+      <form onSubmit={handleSubmit(onValid, onError)} className="w-full sm:w-[500px] mx-auto flex flex-col p-6 gap-4">
         <div className="flex flex-col gap-2">
           <label htmlFor="cardNumber1" className="text-xs">카드 번호</label>
           <div className="bg-gray-100 w-full p-2 font-bold flex flex-row justify-center rounded-lg">
@@ -119,8 +124,6 @@ export default function AddPayment() {
               onInput={(e) => handleInput(e, cardDateMonth)}
             />
           </div>
-          {console.log(errors)}
-          {errors.cardNumber1?.message && <p className="text-red-500 text-center text-xs">!! {errors.cardNumber1.message}</p>}
         </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="cardDateMonth" className="text-xs">만료일</label>

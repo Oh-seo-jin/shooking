@@ -6,7 +6,7 @@ class MyCard extends React.Component {
 
     return (
       <div className="w-[256px] mx-auto">
-        <div className="w-full h-[161px] bg-gray-800 text-lg rounded-lg relative">
+        <div className="w-full h-[161px] bg-gray-800 text-md rounded-lg relative">
           <div className="w-12 h-8 bg-[#CBBA64] absolute top-14 left-6 rounded-md"/>
             <p className="text-white absolute top-24 left-6">{cardNumber1}</p>
             <p className="text-white absolute top-24 left-20">{cardNumber2}</p>

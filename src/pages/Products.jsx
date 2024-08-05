@@ -16,9 +16,9 @@ class Products extends Component{
     return (
       <div className='w-screen h-screen'>
         {/* header */}
-        <div className='bg-black w-screen h-16 flex flex-row justify-end items-center px-6 lg:px-12'>
-          <p className='text-white mr-1'>장바구니</p>
-          <p className='bg-white text-black font-bold rounded-full w-6 h-6 text-center'>{this.state.count}</p>
+        <div className='bg-black w-screen h-16 flex flex-row justify-end items-end px-6 py-4 lg:px-12'>
+          <img src={`${process.env.PUBLIC_URL}/svg/cart.svg`} className=''/>
+          <p className='bg-white font-bold text-ms rounded-full w-4 h-4 flex justify-center items-center'>{this.state.count}</p>
         </div>
         {/* main */}
         <div className='p-6 lg:px-60'>

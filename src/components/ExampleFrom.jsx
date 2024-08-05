@@ -6,7 +6,9 @@ export default function NameForm() {
     register,
     handleSubmit,
     formState: {errors},
-  } = useForm();
+  } = useForm({
+    mode: "onBlur"
+  });
 
   /* 함수 정의 */
   const onSubmit = (data) => {
@@ -18,7 +20,7 @@ export default function NameForm() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>
           이름:
-          <input type="text" {...register("name", {required: "필수 입력 사항입니다"})}/>
+          <input type="text" {...register("name", {required: "필수 입력 사항입니다", pattern: {value: /^[0-9]+$/, message:"숫자만!"}})}/>
           {errors.name && <p className="text-red-500">{errors.name.message}</p>}
         </label>
         <input type="submit" value="Submit" />
