@@ -28,7 +28,7 @@ class ProductCard extends Component {
                     <p className="font-bold text-base">{price}</p>
                     <div className='flex flex-row gap-2'>
                     <button onClick={this.handleCart} className={`bg-black text-white text-xs p-1 w-11 rounded-xl ${disabled ? 'bg-gray-300 text-black font-bold cursor-not-allowed': ''}`} disabled={disabled ? "disabled" : ""}>{disabled ? "담김!" : "담기"}</button>
-                    <Link className={`bg-yellow-400 text-black text-xs text-center p-1 w-11 rounded-xl`}>구매</Link>
+                    <Link to="/payments" className={`bg-yellow-400 text-black text-xs text-center p-1 w-11 rounded-xl`}>구매</Link>
                     </div>
                 </div>
             </div>

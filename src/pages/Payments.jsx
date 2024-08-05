@@ -1,5 +1,6 @@
 import React, { Component} from "react";
 import MyCard from "../components/CardForm";
+import { Link } from "react-router-dom";
 
 class NewCard extends Component {
   constructor(props) {
@@ -8,9 +9,9 @@ class NewCard extends Component {
   
   render() {
     return (
-      <div className="w-[256px]">
+      <Link to="/payments/add" className="w-[256px]">
         <div className="w-full h-[161px] bg-gray-200 text-4xl rounded-lg flex justify-center items-center">+</div>
-      </div>
+      </Link>
     )
   }
 }
@@ -21,9 +22,9 @@ function Payments() {
   return (
     <>
     {/* header */}
-    <div className='bg-white w-screen h-16 flex flex-row justify-between items-center px-20 lg:px-20'>
-      <p>보유카드</p>
-      <button className="justify-self-end">
+    <div className='bg-white w-screen h-16 flex flex-row items-center px-20 lg:px-20 relative'>
+      <p className="absolute left-24">보유카드</p>
+      <button className="absolute right-10">
         <img src={`${process.env.PUBLIC_URL}/svg/cancel.svg`} />
       </button>
     </div>

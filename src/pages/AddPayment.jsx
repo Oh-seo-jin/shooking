@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import MyCard from "../components/CardForm";
+import { Link } from "react-router-dom";
 
 export default function AddPayment() {
 
@@ -54,31 +55,29 @@ export default function AddPayment() {
 
   return (
     <div>
-    {/* header */}
-    <div className='bg-white w-full h-16 flex flex-row items-center justify-between px-6 md:px-12'>
-      <div className="flex flex-row gap-16 ">
-        <button>
+      {/* header */}
+      <div className='bg-white w-full h-16 flex flex-row items-center md:px-12 relative'>
+        <Link to="/payments" className="absolute left-10">
           <img src={`${process.env.PUBLIC_URL}/svg/prevButton.svg`}/>
-        </button>
-        <p>카드 추가</p>
+        </Link>
+        <p className="absolute left-24">카드 추가</p>
+        <Link to="/payments" className="absolute right-10">
+          <img src={`${process.env.PUBLIC_URL}/svg/cancel.svg`} />
+        </Link>
       </div>
-      <button className="justify-self-end">
-        <img src={`${process.env.PUBLIC_URL}/svg/cancel.svg`} />
-      </button>
-    </div>
-    {/* card image */}
-    <div>
-      <MyCard 
-        cardNumber1={cardNumber1.current?.value}
-        cardNumber2={cardNumber2.current?.value}
-        cardNumber3={cardNumber3.current?.value.length}
-        cardNumber4={cardNumber4.current?.value.length}
-        cardOwner={cardOwner.current?.value}
-        cardDateMonth={cardDateMonth.current?.value}
-        cardDateYear={cardDateYear.current?.value}
-      />
-    </div>
-    {/* form */}
+      {/* card image */}
+      <div>
+        <MyCard 
+          cardNumber1={cardNumber1.current?.value}
+          cardNumber2={cardNumber2.current?.value}
+          cardNumber3={cardNumber3.current?.value.length}
+          cardNumber4={cardNumber4.current?.value.length}
+          cardOwner={cardOwner.current?.value}
+          cardDateMonth={cardDateMonth.current?.value}
+          cardDateYear={cardDateYear.current?.value}
+        />
+      </div>
+      {/* form */}
       <form onSubmit={handleSubmit(onValid, onError)} className="w-full sm:w-[500px] mx-auto flex flex-col p-6 gap-4">
         <div className="flex flex-col gap-2">
           <label htmlFor="cardNumber1" className="text-xs">카드 번호</label>
