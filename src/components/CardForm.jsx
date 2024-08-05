@@ -13,7 +13,7 @@ class MyCard extends React.Component {
             <p className="text-white absolute top-24 right-20">{cardNumber3 ? "••••" : ""}</p>
             <p className="text-white absolute top-24 right-6">{cardNumber4 ? "••••" : ""}</p>
             <div className="w-full absolute top-[120px] flex flex-row justify-between">
-              <p className="text-white relative left-6">{cardOwner ? cardOwner : "NAME"}</p>
+              <p className="text-white relative left-6 w-[120px] truncate">{cardOwner ? cardOwner : "NAME"}</p>
               <p className="text-white relative right-6">{cardDateMonth ? cardDateMonth : 'MM' } / {cardDateYear ? cardDateYear : "YY"}</p>
             </div>
         </div>

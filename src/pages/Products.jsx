@@ -57,7 +57,7 @@ class Products extends Component{
         {/* main */}
         <div className='p-6 md:px-20 lg:w-[840px] mx-auto'>
           <h1 className='font-bold text-2xl mt-4 mb-1'>신발 상품 목록</h1>
-          <p className='text-base mb-6'>현재 {this.state.n}개의 상품이 있습니다.</p>
+          <p className='text-base mb-6'>현재 {this.productList.length}개의 상품이 있습니다.</p>
           <div className='grid grid-cols-2 lg:grid-cols-3 gap-4'>
             {productList.map((p) => {
               console.log(p);
