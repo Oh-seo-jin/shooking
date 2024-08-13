@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import MyCard from "../components/CardForm";
 import { Link } from "react-router-dom";
+import { CardsContext } from "./Payments";
 
 export default function AddPayment() {
 
@@ -12,7 +13,9 @@ export default function AddPayment() {
   } = useForm({
     mode: "onBlur",
   });
+
   const [cardOwnerLen, setCardOwnerLen] = useState(0);
+  const cards = useContext(CardsContext);
 
   /* 유효성 검사 */
   const validCardNumber = {

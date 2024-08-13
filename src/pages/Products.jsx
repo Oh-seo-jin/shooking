@@ -51,7 +51,7 @@ class Products extends Component{
       <div className='w-full h-full'>
         {/* header */}
         <div className='bg-black w-full h-16 flex flex-row justify-end items-center relative px-6 py-4 lg:px-12'>
-          <img src={`${process.env.PUBLIC_URL}/svg/cart.svg`} className='px-3'/>
+          <img src={`${process.env.PUBLIC_URL}/svg/cart.svg`} className='px-2'/>
           {count ? <p className='bg-white font-bold text-ms rounded-full w-4 h-4 flex justify-center items-center absolute bottom-4'>{count}</p> : ""}
         </div>
         {/* main */}
