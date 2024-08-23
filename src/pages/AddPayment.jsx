@@ -4,7 +4,7 @@ import MyCard from "../components/CardForm";
 import { Link } from "react-router-dom";
 import { CardsContext } from "./Payments";
 
-export default function AddPayment({ handleClose, goToPayments}) {
+export default function AddPayment({ handleClose, goToPayments }) {
 
   const {
     register, // 이번트 객체 생성
@@ -91,7 +91,7 @@ export default function AddPayment({ handleClose, goToPayments}) {
               {...register("cardNumber1", validCardNumber)} 
               placeholder="0000" 
               maxLength="4"
-              className="text-center w-16 bg-transparent"
+              className="bg-red-500 text-center w-16 bg-transparent"
               ref={cardNumber1}
               onInput={(e) => handleInput(e, cardNumber2)}
             />-

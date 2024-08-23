@@ -5,7 +5,7 @@ class MyCard extends React.Component {
     const {cardNumber1, cardNumber2, cardNumber3, cardNumber4, cardOwner, cardDateMonth, cardDateYear} = this.props;
 
     return (
-      <div className="w-[256px] mx-auto">
+      <div className="max-w-[256px] mx-auto">
         <div className="w-full h-[161px] bg-gray-800 text-md rounded-lg relative">
           <div className="w-12 h-8 bg-[#CBBA64] absolute top-14 left-6 rounded-md"/>
             <p className="text-white absolute top-24 left-6">{cardNumber1}</p>
