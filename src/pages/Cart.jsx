@@ -91,7 +91,7 @@ export default function Cart() {
         {curPage === "payments" ? (
             <Payments handleClose={closeModal} goToAddPayment={goToAddPayment}/>
         ) : (
-            <AddPayment handleClose={closeModal} goToPayment={goToPayments}/>
+            <AddPayment handleClose={closeModal} goToPayments={goToPayments}/>
         )}
         </Modal>
       </div>

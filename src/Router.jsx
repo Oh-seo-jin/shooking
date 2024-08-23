@@ -5,7 +5,7 @@ import Cart from './pages/Cart';
 export default function Router() {
   
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Products/>}/>
 =        <Route path="/cart" element={<Cart/>} />
