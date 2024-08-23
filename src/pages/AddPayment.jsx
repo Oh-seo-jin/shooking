@@ -1,10 +1,10 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import { useForm } from "react-hook-form";
 import MyCard from "../components/CardForm";
 import { Link } from "react-router-dom";
 import { CardsContext } from "./Payments";
 
-export default function AddPayment() {
+export default function AddPayment({ handleClose, goToPayments}) {
 
   const {
     register, // 이번트 객체 생성
@@ -60,13 +60,13 @@ export default function AddPayment() {
     <div>
       {/* header */}
       <div className='bg-white w-full h-16 flex flex-row items-center md:px-12 relative'>
-        <Link to="/payments" className="absolute left-10">
+        <button onClick={goToPayments} className="absolute left-10">
           <img src={`${process.env.PUBLIC_URL}/svg/prevButton.svg`}/>
-        </Link>
+        </button>
         <p className="absolute left-24">카드 추가</p>
-        <Link to="/payments" className="absolute right-10">
+        <button onClick={handleClose} className="absolute right-10">
           <img src={`${process.env.PUBLIC_URL}/svg/cancel.svg`} />
-        </Link>
+        </button>
       </div>
       {/* card image */}
       <div>
